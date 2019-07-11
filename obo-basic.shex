@@ -8,9 +8,11 @@ PREFIX : <http://purl.obolibrary.org/obo/shapes/>
 # we don't want to hardcode this here...
 start = @:OboClass
 
-ABSTRACT :OboEntity  {
-  rdfs:comment Literal ;  
+
+# base class.
+ABSTRACT :OboEntity CLOSED {
   rdfs:label Literal ;  ## want to restrict this to xsd:string OR plain literal
+  rdfs:comment Literal {0,1} ;  
 }
 
 :OboClass &:OboEntity {
