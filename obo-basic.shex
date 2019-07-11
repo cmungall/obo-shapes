@@ -17,12 +17,14 @@ start = @:OboClass
   )
 }
 
+# this is kind of clunky!
 :OboClass EXTRA rdf:type EXTRA rdfs:subClassOf CLOSED {
   &:OboEntityCommon ;
   rdf:type [owl:Class] ;
   rdfs:subClassOf @:OboClass* ;
 }
 
+# ignore this one for now
 :OboObjectProperty CLOSED {
   &:OboEntityCommon ;
   rdf:type [owl:ObjectProperty] ;
