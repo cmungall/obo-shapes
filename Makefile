@@ -8,4 +8,4 @@ pass-%: tests/pass%.ttl
 
 # expected fails
 fail-%: tests/fail%.ttl
-	shexeval -A $< $(SCHEMA) && exit 1 || echo EXPECTED FAIL
+	shexeval -A $< $(SCHEMA) && exit 1 || echo FAILED AS EXPECTED

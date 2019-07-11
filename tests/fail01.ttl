@@ -1,0 +1,19 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX GO: <http://purl.obolibrary.org/obo/GO_>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX : <http://x.org/>
+
+GO:0000001 a owl:Class ;
+  rdfs:label "c1" ;
+  rdfs:comment "foo" ;
+  rdfs:subClassOf GO:0000002 ;
+.
+
+GO:0000002 a owl:Class ;
+  rdfs:label "c2" ;
+  rdfs:comment "bar" ;
+  rdfs:notARealProperty "this should not be allowed" ;
+.
+   
