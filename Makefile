@@ -1,6 +1,11 @@
 SCHEMA = obo-basic.shex
 
-test: t-t01
+test: pass-01 fail-01
 
-t-%: tests/%.ttl
+# expected passes
+pass-%: tests/pass%.ttl
 	shexeval -A $< $(SCHEMA)
+
+# expected fails
+fail-%: tests/fail%.ttl
+	shexeval -A $< $(SCHEMA) && exit 1 || echo EXPECTED FAIL
