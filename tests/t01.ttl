@@ -14,6 +14,5 @@ GO:0000001 a owl:Class ;
 GO:0000002 a owl:Class ;
   rdfs:label "c2" ;
   rdfs:comment "bar" ;
-  rdfs:notARealProperty "this should not be allowed" ;
 .
    

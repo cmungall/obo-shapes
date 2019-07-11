@@ -15,7 +15,7 @@ ABSTRACT :OboEntity CLOSED {
   rdfs:comment Literal {0,1} ;  
 }
 
-:OboClass &:OboEntity {
+:OboClass &:OboEntity CLOSED {
   rdf:type [owl:Class] ;
   rdfs:subClassOf @:OboClass* ;
 }
