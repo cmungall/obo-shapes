@@ -10,16 +10,17 @@ start = @:OboClass
 
 
 # base class.
-ABSTRACT :OboEntity CLOSED {
+:OboEntity {
   rdfs:label Literal ;  ## want to restrict this to xsd:string OR plain literal
   rdfs:comment Literal {0,1} ;  
 }
 
-:OboClass &:OboEntity {
+:OboClass @:OboEntity AND CLOSED {
   rdf:type [owl:Class] ;
   rdfs:subClassOf @:OboClass* ;
 }
 
+# ignore for now
 :OboObjectProperty &:OboEntity {
   rdf:type [owl:ObjectProperty] ;
   rdfs:subClassOf @:OboClass* ;
