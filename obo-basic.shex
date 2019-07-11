@@ -1,0 +1,24 @@
+BASE   <http://purl.obolibrary.org/obo/go/shapes/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX : <http://purl.obolibrary.org/obo/shapes/>
+
+# we don't want to hardcode this here...
+start = @:OboClass
+
+ABSTRACT :OboEntity  {
+  rdfs:comment Literal ;  
+  rdfs:label Literal ;  ## want to restrict this to xsd:string OR plain literal
+}
+
+:OboClass &:OboEntity {
+  rdf:type [owl:Class] ;
+  rdfs:subClassOf @:OboClass* ;
+}
+
+:OboObjectProperty &:OboEntity {
+  rdf:type [owl:ObjectProperty] ;
+  rdfs:subClassOf @:OboClass* ;
+}
